@@ -1,0 +1,26 @@
+import java.util.*;
+public class adjancy_mat {
+    public static void main(String []args){
+        Scanner sc=new Scanner(System.in);
+        int vertices=sc.nextInt();
+        while(vertices<0){
+            System.out.println("enter a valid vertex number: ");
+            vertices=sc.nextInt();
+        }
+        int [][]mat=new int [vertices][vertices];
+        for(int row=0;row<vertices;row++){
+            for(int col=0;col<vertices;col++){
+                System.out.println("Enter 1 if there is a node between"+row+"and"+col+"else enter 0");
+                int choice=sc.nextInt();
+                mat[row][col]=choice;
+                mat[col][row]=choice;
+            }
+        }
+        for(int row=0;row<vertices;row++){
+            for(int col=0;col<vertices;col++){
+                if(mat[row][col]==1) System.out.println("Edge present");
+                else System.out.println("No Edge");
+            }
+        }
+    }
+}
